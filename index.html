@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Examen - Modo Seguro</title>
+
+<style>
+    body {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: #f5f5f5;
+    }
+
+    .warning-bar {
+        display: none;
+        background: #c62828;
+        color: #fff;
+        padding: 12px;
+        font-weight: bold;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: 80px auto 40px auto;
+        background: #ffffff;
+        padding: 25px 35px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    .question {
+        margin-bottom: 35px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .question-title {
+        font-weight: bold;
+        margin-bottom: 12px;
+        font-size: 17px;
+    }
+
+    .options label {
+        display: block;
+        margin-bottom: 8px;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    input[type="radio"] {
+        margin-right: 8px;
+        transform: scale(1.2);
+    }
+</style>
+</head>
+
+<body>
+
+<div id="warningBar" class="warning-bar">
+    ⚠ Atención: La página del examen no está en primer plano.
+</div>
+
+<div class="container">
+    <h1>Examen - Preguntas 1 a 40</h1>
+
+    <!-- PREGUNTAS 1 A 40 -->
+
+    <div class="question">
+        <div class="question-title">1. What is the hot flow of a turbofan?</div>
+        <label><input type="radio" name="q1">The secondary flow</label>
+        <label><input type="radio" name="q1">The primary flow</label>
+        <label><input type="radio" name="q1">The cooling flow</label>
+    </div>
+
+    <div class="question">
+        <div class="question-title">2. How is the power output of a turbine engine?</div>
+        <label><input type="radio" name="q2">Continuous</label>
+        <label><input type="radio" name="q2">Alternated</label>
+        <label><input type="radio" name="q2">Reciprocated</label>
+    </div>
+
+    <div class="question">
+        <div class="question-title">3. In a gas turbine engine the cold section comprehends:</div>
+        <label><input type="radio" name="q3">Air intake and compressor</label>
+        <label><input type="radio" name="q3">Air intake, compressor and turbine</label>
+        <label><input type="radio" name="q3">Air intake and nozzle</label>
+    </div>
+
+    <div class="question">
+        <div class="question-title">4. To obtain thrust, exhaust velocity must be:</div>
+        <label><input type="radio" name="q4">Higher</label>
+        <label><input type="radio" name="q4">The same</label>
+        <label><input type="radio" name="q4">Lower</label>
+    </div>
+
+    <div class="question">
+        <div class="question-title">5. Which thermodynamic cycle describes an engine?</div>
+        <label><input type="radio" name="q5">Carnot cycle</label>
+        <label><input type="radio" name="q5">Brayton cycle</label>
+        <label><input type="radio" name="q5">Otto cycle</label>
+    </div>
+
+    <div class="question">
+        <div class="question-title">6. Turboprops are:</div>
+        <label><input type="radio" name="q6">Less noisy than turbojet</label>
+        <label><input type="radio" name="q6">More noisy than turbofan</label>
+        <label><input type="radio" name="q6">More noisy than turbojet</label>
+    </div>
+
+    <div class="question">
+        <div class="question-title">7. Formula for kinetic energy:</div>
+        <label><input type="radio" name="q7">Ek = 1/2 mv³</label>
+        <label><input type="radio" name="q7">Ek = 1/2 mv²</label>
+        <label><input type="radio" name="q7">Ek = 1/2 mv⁴</label>
+    </div>
+
+    <div class="question">
+        <div class="question-title">8. Point 3 in Joule-Brayton cycle represents:</div>
+        <label><input type="radio" name="q8">Beginning of nozzle, highest temperature</label>
+        <label><input type="radio" name="q8">Beginning of turbine stages, highest temperature</label>
+        <label><input type="radio" name="q8">Beginning of turbine stages, highest pressure</label>
+    </div>
+
+    <div class="question">
+        <div class="question-title">9. Regarding the Geared Turbo Fan Engine:</div>
+        <label><input type="radio" name="q9">Save over 1M USD per year</label>
+        <label><input type="radio" name="q9">50% emission reduction</label>
+        <label><input type="radio" name="q9">Both are correct</label>
+    </div>
+
+    <div class="question">
+        <div class="question-title">10. What does the Geared Turbo Fan provide?</div>
+        <label><input type="radio" name="q10">Fan and low turbine same speed</label>
+        <label><input type="radio" name="q10">Slow down compressor</label>
+        <label><input type="radio" name="q10">Fan and low turbine different speeds</label>
+    </div>
+
+    <!-- SIGUEN TODAS LAS DEMÁS PREGUNTAS HASTA LA 40... -->
+
+    <!-- Para no saturar el mensaje, si quieres, te envío las preguntas 11 a 40 en el siguiente mensaje -->
+</div>
+
+<script>
+// Bloquear clic derecho
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Bloquear selección de texto
+document.addEventListener('selectstart', e => e.preventDefault());
+
+// Barra de advertencia
+const warningBar = document.getElementById('warningBar');
+
+// Detectar si la pestaña pierde visibilidad
+document.addEventListener('visibilitychange', () => {
+    warningBar.style.display = document.hidden ? 'block' : 'none';
+});
+
+// Detectar si la ventana pierde foco
+window.addEventListener('blur', () => {
+    warningBar.style.display = 'block';
+});
+
+window.addEventListener('focus', () => {
+    warningBar.style.display = 'none';
+});
+</script>
+
+</body>
+</html>
