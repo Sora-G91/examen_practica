@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Examen - Modo Seguro</title>
+<title>Aviotrace Swiss - Examination</title>
 
 <style>
     body {
@@ -10,17 +10,19 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        font-family: Arial, sans-serif;
+        font-family: "Segoe UI", Tahoma, sans-serif;
         margin: 0;
         padding: 0;
-        background: #f5f5f5;
+        background: #fdfdfd;
+        color: #444;
     }
 
+    /* Barra de advertencia */
     .warning-bar {
         display: none;
         background: #c62828;
         color: #fff;
-        padding: 12px;
+        padding: 10px;
         font-weight: bold;
         text-align: center;
         position: fixed;
@@ -29,36 +31,99 @@
         z-index: 9999;
     }
 
+    /* Encabezado estilo Aviotrace */
+    .header {
+        max-width: 900px;
+        margin: 20px auto 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 10px 20px;
+        border-bottom: 2px solid #333;
+    }
+
+    .logo-area img {
+        height: 50px;
+    }
+
+    .exam-code {
+        font-family: "Courier New", Courier, monospace;
+        font-weight: bold;
+        font-size: 1.1em;
+        color: #333;
+        text-align: right;
+    }
+
     .container {
         max-width: 900px;
-        margin: 80px auto 40px auto;
+        margin: 20px auto 100px auto;
         background: #ffffff;
-        padding: 25px 35px;
-        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        padding: 20px 40px;
     }
 
     .question {
         margin-bottom: 35px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #ddd;
+        page-break-inside: avoid;
     }
 
     .question-title {
-        font-weight: bold;
+        font-weight: 600;
         margin-bottom: 12px;
-        font-size: 17px;
+        font-size: 16px;
+        color: #000;
+        line-height: 1.4;
+    }
+
+    .options {
+        list-style: none;
+        padding-left: 10px;
     }
 
     .options label {
-        display: block;
+        display: flex;
+        align-items: flex-start;
         margin-bottom: 8px;
         cursor: pointer;
         font-size: 15px;
+        color: #444;
     }
 
+    /* Estilo para los radio buttons circulares de la imagen */
     input[type="radio"] {
+        margin-right: 12px;
+        margin-top: 3px;
+        appearance: none;
+        -webkit-appearance: none;
+        width: 15px;
+        height: 15px;
+        border: 1px solid #555;
+        border-radius: 50%;
+        outline: none;
+        cursor: pointer;
+        flex-shrink: 0;
+        position: relative;
+    }
+
+    input[type="radio"]:checked::after {
+        content: "";
+        width: 9px;
+        height: 9px;
+        background: #222;
+        border-radius: 50%;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+    }
+
+    .question-number {
         margin-right: 8px;
-        transform: scale(1.2);
+    }
+
+    footer {
+        text-align: center;
+        font-size: 12px;
+        color: #999;
+        margin-bottom: 40px;
     }
 </style>
 </head>
@@ -66,112 +131,874 @@
 <body>
 
 <div id="warningBar" class="warning-bar">
-    ⚠ Atención: La página del examen no está en primer plano.
+    ⚠ ATTENTION: TAB OUT OF FOCUS - EXAMINATION RISK OF ANNULLMENT
 </div>
+
+<header class="header">
+    <div class="logo-area">
+        <strong style="color: #c62828; font-size: 24px;">aviotrace</strong><span style="font-size: 24px; font-weight: bold; color: #555;"> SWISS</span>
+        <div style="font-size: 10px; color: #777; letter-spacing: 0.5px;">EASA Part 147 Training Organisation</div>
+    </div>
+    <div class="exam-code">
+        Module 15 MCQ<br>
+        Part-66 Basic Examination
+    </div>
+</header>
 
 <div class="container">
-    <h1>Examen - Preguntas 1 a 40</h1>
-
-    <!-- PREGUNTAS 1 A 40 -->
 
     <div class="question">
-        <div class="question-title">1. What is the hot flow of a turbofan?</div>
-        <label><input type="radio" name="q1">The secondary flow</label>
-        <label><input type="radio" name="q1">The primary flow</label>
-        <label><input type="radio" name="q1">The cooling flow</label>
+        <div class="question-title"><span class="question-number">1.</span> What is the hot flow of a turbofan?</div>
+        <div class="options">
+            <label><input type="radio" name="q1"> The secondary flow</label>
+            <label><input type="radio" name="q1"> The primary flow</label>
+            <label><input type="radio" name="q1"> The cooling flow</label>
+        </div>
     </div>
 
     <div class="question">
-        <div class="question-title">2. How is the power output of a turbine engine?</div>
-        <label><input type="radio" name="q2">Continuous</label>
-        <label><input type="radio" name="q2">Alternated</label>
-        <label><input type="radio" name="q2">Reciprocated</label>
+        <div class="question-title"><span class="question-number">2.</span> How is the power output of a turbine engine?</div>
+        <div class="options">
+            <label><input type="radio" name="q2"> Continuous</label>
+            <label><input type="radio" name="q2"> Alternated</label>
+            <label><input type="radio" name="q2"> Reciprocated</label>
+        </div>
     </div>
 
     <div class="question">
-        <div class="question-title">3. In a gas turbine engine the cold section comprehends:</div>
-        <label><input type="radio" name="q3">Air intake and compressor</label>
-        <label><input type="radio" name="q3">Air intake, compressor and turbine</label>
-        <label><input type="radio" name="q3">Air intake and nozzle</label>
+        <div class="question-title"><span class="question-number">3.</span> In a gas turbine engine the cold section Which elements comprehends?</div>
+        <div class="options">
+            <label><input type="radio" name="q3"> Air intake and compressor</label>
+            <label><input type="radio" name="q3"> Air intake, compressor and turbine</label>
+            <label><input type="radio" name="q3"> Air intake and nozzle</label>
+        </div>
     </div>
 
     <div class="question">
-        <div class="question-title">4. To obtain thrust, exhaust velocity must be:</div>
-        <label><input type="radio" name="q4">Higher</label>
-        <label><input type="radio" name="q4">The same</label>
-        <label><input type="radio" name="q4">Lower</label>
+        <div class="question-title"><span class="question-number">4.</span> In order to obtain thrust, how must be the exhaust velocity at the nozzle respect to the inlet velocity at the air intake?</div>
+        <div class="options">
+            <label><input type="radio" name="q4"> Higher</label>
+            <label><input type="radio" name="q4"> The same</label>
+            <label><input type="radio" name="q4"> Lower</label>
+        </div>
     </div>
 
     <div class="question">
-        <div class="question-title">5. Which thermodynamic cycle describes an engine?</div>
-        <label><input type="radio" name="q5">Carnot cycle</label>
-        <label><input type="radio" name="q5">Brayton cycle</label>
-        <label><input type="radio" name="q5">Otto cycle</label>
+        <div class="question-title"><span class="question-number">5.</span> Which of the following thermodynamic cycles describes the behaviour of an engine?</div>
+        <div class="options">
+            <label><input type="radio" name="q5"> Carnot cycle</label>
+            <label><input type="radio" name="q5"> Brayton cycle</label>
+            <label><input type="radio" name="q5"> Otto cycle</label>
+        </div>
     </div>
 
     <div class="question">
-        <div class="question-title">6. Turboprops are:</div>
-        <label><input type="radio" name="q6">Less noisy than turbojet</label>
-        <label><input type="radio" name="q6">More noisy than turbofan</label>
-        <label><input type="radio" name="q6">More noisy than turbojet</label>
+        <div class="question-title"><span class="question-number">6.</span> Turboprops are:</div>
+        <div class="options">
+            <label><input type="radio" name="q6"> Less noisy than turbojet</label>
+            <label><input type="radio" name="q6"> More noisy than a turbofan</label>
+            <label><input type="radio" name="q6"> More noisy than a turbojet</label>
+        </div>
     </div>
 
     <div class="question">
-        <div class="question-title">7. Formula for kinetic energy:</div>
-        <label><input type="radio" name="q7">Ek = 1/2 mv³</label>
-        <label><input type="radio" name="q7">Ek = 1/2 mv²</label>
-        <label><input type="radio" name="q7">Ek = 1/2 mv⁴</label>
+        <div class="question-title"><span class="question-number">7.</span> Which is the formula to compute the kinetic energy?</div>
+        <div class="options">
+            <label><input type="radio" name="q7"> Ek=1/2 mv^3</label>
+            <label><input type="radio" name="q7"> Ek=1/2 mv^2</label>
+            <label><input type="radio" name="q7"> Ek=1/2 mv^4</label>
+        </div>
     </div>
 
     <div class="question">
-        <div class="question-title">8. Point 3 in Joule-Brayton cycle represents:</div>
-        <label><input type="radio" name="q8">Beginning of nozzle, highest temperature</label>
-        <label><input type="radio" name="q8">Beginning of turbine stages, highest temperature</label>
-        <label><input type="radio" name="q8">Beginning of turbine stages, highest pressure</label>
+        <div class="question-title"><span class="question-number">8.</span> What does represent point 3 in the Joule-Bryton cycle?</div>
+        <div class="options">
+            <label><input type="radio" name="q8"> Beginning of the nozzle, highest temperature in the cycle</label>
+            <label><input type="radio" name="q8"> Beginning of the turbine stages, highest temperature in the cycle</label>
+            <label><input type="radio" name="q8"> Beginning of the turbine stages, highest pressure in the cycle</label>
+        </div>
     </div>
 
     <div class="question">
-        <div class="question-title">9. Regarding the Geared Turbo Fan Engine:</div>
-        <label><input type="radio" name="q9">Save over 1M USD per year</label>
-        <label><input type="radio" name="q9">50% emission reduction</label>
-        <label><input type="radio" name="q9">Both are correct</label>
+        <div class="question-title"><span class="question-number">9.</span> Regarding the Geared Turbo Fan Engine:</div>
+        <div class="options">
+            <label><input type="radio" name="q9"> save over 1 million Dollars per year per A/C from average flight cost</label>
+            <label><input type="radio" name="q9"> 50% decrement in the emission</label>
+            <label><input type="radio" name="q9"> both are correct</label>
+        </div>
     </div>
 
     <div class="question">
-        <div class="question-title">10. What does the Geared Turbo Fan provide?</div>
-        <label><input type="radio" name="q10">Fan and low turbine same speed</label>
-        <label><input type="radio" name="q10">Slow down compressor</label>
-        <label><input type="radio" name="q10">Fan and low turbine different speeds</label>
+        <div class="question-title"><span class="question-number">10.</span> what the Geared Turbo Fan provide ?</div>
+        <div class="options">
+            <label><input type="radio" name="q10"> Front fan and low Turbine operate with the same speed</label>
+            <label><input type="radio" name="q10"> slow down the compressor speed to decrease the SFC</label>
+            <label><input type="radio" name="q10"> Front fan and low Turbine operate with Different speeds</label>
+        </div>
     </div>
 
-    <!-- SIGUEN TODAS LAS DEMÁS PREGUNTAS HASTA LA 40... -->
+    <div class="question">
+        <div class="question-title"><span class="question-number">11.</span> Regarding the Geared Turbo Fan Engine:</div>
+        <div class="options">
+            <label><input type="radio" name="q11"> same emission like normal traditional engines</label>
+            <label><input type="radio" name="q11"> 50% decrement in the emission</label>
+            <label><input type="radio" name="q11"> increase the Emission</label>
+        </div>
+    </div>
 
-    <!-- Para no saturar el mensaje, si quieres, te envío las preguntas 11 a 40 en el siguiente mensaje -->
+    <div class="question">
+        <div class="question-title"><span class="question-number">12.</span> In the Geared Turbo Fan engines :</div>
+        <div class="options">
+            <label><input type="radio" name="q12"> Front fan run slower than the low Turbine</label>
+            <label><input type="radio" name="q12"> Front fan high compressor run at the same speed</label>
+            <label><input type="radio" name="q12"> all engine rotating parts will run on the same speed</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">13.</span> Which is the percentage of reduction of RPM during ground operation with a turbo-prop aircraft?</div>
+        <div class="options">
+            <label><input type="radio" name="q13"> 90 percent</label>
+            <label><input type="radio" name="q13"> 70 percent</label>
+            <label><input type="radio" name="q13"> 80 percent</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">14.</span> Which is the propeller RPM value in normal condition?</div>
+        <div class="options">
+            <label><input type="radio" name="q14"> 4000 RPM</label>
+            <label><input type="radio" name="q14"> 100 RPM</label>
+            <label><input type="radio" name="q14"> 2000 RPM</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">15.</span> What is the purpose of propeller brake?</div>
+        <div class="options">
+            <label><input type="radio" name="q15"> to block the propeller from windmilling when it is feathered in every flight condition</label>
+            <label><input type="radio" name="q15"> to block the propeller from windmilling when it is feathered on the ground</label>
+            <label><input type="radio" name="q15"> to block the propeller from windmilling when it is feathered only during taxing</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">16.</span> Which is the main difference between single shaft and free-turbine engine?</div>
+        <div class="options">
+            <label><input type="radio" name="q16"> it is the dimension of the engine compartment</label>
+            <label><input type="radio" name="q16"> it is the type of the propeller installed</label>
+            <label><input type="radio" name="q16"> it is the power transmission to the propeller</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">17.</span> The turbo-prop reduction gear assembly includes:</div>
+        <div class="options">
+            <label><input type="radio" name="q17"> An independent lubrication system</label>
+            <label><input type="radio" name="q17"> An independent hydraulic system</label>
+            <label><input type="radio" name="q17"> An independent pneumatic system</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">18.</span> Which one is the typical range of RPM of a turboprop?</div>
+        <div class="options">
+            <label><input type="radio" name="q18"> 5000</label>
+            <label><input type="radio" name="q18"> 2000</label>
+            <label><input type="radio" name="q18"> 3000</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">19.</span> How is driven the propeller in a free-turbine engine configuration?</div>
+        <div class="options">
+            <label><input type="radio" name="q19"> by the compressor</label>
+            <label><input type="radio" name="q19"> by a dedicated turbine through reduction gearing</label>
+            <label><input type="radio" name="q19"> by the same shaft (so, the spool) that drives the compressor</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">20.</span> Where is included the Negative Torque System?</div>
+        <div class="options">
+            <label><input type="radio" name="q20"> In the turboprop FADEC</label>
+            <label><input type="radio" name="q20"> In the reduction gear assembly</label>
+            <label><input type="radio" name="q20"> In the turboprop compressor</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">21.</span> Which one is the main characteristic of a free turbine engine?</div>
+        <div class="options">
+            <label><input type="radio" name="q21"> The propeller is directly driven by the same shaft that drives the compressor</label>
+            <label><input type="radio" name="q21"> The propeller is driven by a dedicated turbine through reduction gear box</label>
+            <label><input type="radio" name="q21"> The propeller is driven by a dedicated turbine</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">22.</span> Which is the specific consumption of turbo-prop engine?</div>
+        <div class="options">
+            <label><input type="radio" name="q22"> 20% better of piston engine</label>
+            <label><input type="radio" name="q22"> 80% better of piston engine</label>
+            <label><input type="radio" name="q22"> 40% better of piston engine</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">23.</span> What does the output shaft include in every type of reduction gearbox?</div>
+        <div class="options">
+            <label><input type="radio" name="q23"> a spline to engage directly on the turbine or to the main transmission</label>
+            <label><input type="radio" name="q23"> a spline to engage directly on the gearbox or to the main transmission</label>
+            <label><input type="radio" name="q23"> a spline to engage directly on the gearbox or to the turbine</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">24.</span> What is the twin pack?</div>
+        <div class="options">
+            <label><input type="radio" name="q24"> The typical installation of two engine system in an helicopter</label>
+            <label><input type="radio" name="q24"> The typical installation of two engine system in an aircraft with a MTOW more than 5700 kg</label>
+            <label><input type="radio" name="q24"> The typical installation of two engine system in an aircraft with a MTOW less than 5700 kg</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">25.</span> Which is the output speed obtained by a typical integrated two-stage reduction gearbox for turboshafts?</div>
+        <div class="options">
+            <label><input type="radio" name="q25"> 4000 RPM</label>
+            <label><input type="radio" name="q25"> 6000 RPM</label>
+            <label><input type="radio" name="q25"> 8000 RPM</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">26.</span> What is equipped with a modern turboshaft engine?</div>
+        <div class="options">
+            <label><input type="radio" name="q26"> an electric unit</label>
+            <label><input type="radio" name="q26"> an analogic control support</label>
+            <label><input type="radio" name="q26"> an electronic control system</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">27.</span> What does the reduction gears allow?</div>
+        <div class="options">
+            <label><input type="radio" name="q27"> it allow the engine shaft and power shaft to spin at the same rates</label>
+            <label><input type="radio" name="q27"> it allow the engine shaft and power shaft to spin at different rates</label>
+            <label><input type="radio" name="q27"> it allow the engine shaft and power shaft to go at the same speed</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">28.</span> Which is the overall ratio of reduction in two stage reduction gearbox?</div>
+        <div class="options">
+            <label><input type="radio" name="q28"> typically equal to about 3-4 to 1</label>
+            <label><input type="radio" name="q28"> typically equal to about 7-8 to 1</label>
+            <label><input type="radio" name="q28"> typically equal to about 5-6 to 1</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">29.</span> What kind of turbine is used for the APU?</div>
+        <div class="options">
+            <label><input type="radio" name="q29"> Axial turbine</label>
+            <label><input type="radio" name="q29"> Annular turbine</label>
+            <label><input type="radio" name="q29"> Centrifugal turbine</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">30.</span> Which is the common range of EGT in an APU?</div>
+        <div class="options">
+            <label><input type="radio" name="q30"> 150-250 °C</label>
+            <label><input type="radio" name="q30"> 350-500 °C</label>
+            <label><input type="radio" name="q30"> 280-350 °C</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">31.</span> What kind of compressor is used for the APU?</div>
+        <div class="options">
+            <label><input type="radio" name="q31"> Centrifugal compressor</label>
+            <label><input type="radio" name="q31"> Axial compressor</label>
+            <label><input type="radio" name="q31"> Annular compressor</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">32.</span> Which is the basic element of an APU (Auxiliary Power Unit)?</div>
+        <div class="options">
+            <label><input type="radio" name="q32"> a small single-shaft gas turbine engine</label>
+            <label><input type="radio" name="q32"> a small multi-shaft gas turbine engine</label>
+            <label><input type="radio" name="q32"> a large single-shaft gas turbine engine</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">33.</span> What is the ECB?</div>
+        <div class="options">
+            <label><input type="radio" name="q33"> The Electronic Control Box, it control the air flow to the APU</label>
+            <label><input type="radio" name="q33"> The Enhanced Control Box, it control the fuel flow to the APU</label>
+            <label><input type="radio" name="q33"> The Electronic Control Box, it control the fuel flow to the APU</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">34.</span> What does it happen when the pilot begins the APU (Auxiliary Power Unit) start sequence?</div>
+        <div class="options">
+            <label><input type="radio" name="q34"> the control box manage APU (Auxiliary Power Unit) starting sequence in order to begin the combustion process</label>
+            <label><input type="radio" name="q34"> the control box manage starting sequence in order to begin the combustion process</label>
+            <label><input type="radio" name="q34"> the control box manage FADEC starting sequence in order to begin the combustion process</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">35.</span> In a gas turbine engine which are the most significant sources of noise?</div>
+        <div class="options">
+            <label><input type="radio" name="q35"> Only compressor and exhaust jet</label>
+            <label><input type="radio" name="q35"> Combustion chamber, fan, compressor and exhaust jet</label>
+            <label><input type="radio" name="q35"> Fan, compressor, turbine and exhaust jet</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">36.</span> Jet exhaust noise is generated by:</div>
+        <div class="options">
+            <label><input type="radio" name="q36"> The violent laminar mixing of the exhaust gases with the atmosphere</label>
+            <label><input type="radio" name="q36"> The violent turbulent mixing of the exhaust gases with the atmosphere</label>
+            <label><input type="radio" name="q36"> The interaction of pressure fields and turbulent wakes from rotating blades and stationary vanes</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">37.</span> Where gas turbine engine can be installed?</div>
+        <div class="options">
+            <label><input type="radio" name="q37"> In the rear part of fuselage or buried inside the fuselage</label>
+            <label><input type="radio" name="q37"> Under the wings</label>
+            <label><input type="radio" name="q37"> Both the previous answers are correct</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">38.</span> Which is the purpose of a firewall?</div>
+        <div class="options">
+            <label><input type="radio" name="q38"> To insulate the engine compartment and prevent the spread of fire</label>
+            <label><input type="radio" name="q38"> To extinguish a possible fire</label>
+            <label><input type="radio" name="q38"> To avoid overheating of the nacelle</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">39.</span> Compressor and turbine noise is generated by:</div>
+        <div class="options">
+            <label><input type="radio" name="q39"> The interaction of temperature fields and turbulent wakes from rotating blades and stationary vanes</label>
+            <label><input type="radio" name="q39"> The interaction of pressure fields and turbulent wakes from rotating blades and stationary vanes</label>
+            <label><input type="radio" name="q39"> The interaction of pressure fields and laminar wakes from rotating blades and stationary vanes</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">40.</span> What is it affected by the shearing action, caused by the relative speed between the exhaust jet and the atmosphere?</div>
+        <div class="options">
+            <label><input type="radio" name="q40"> The exhaust noise</label>
+            <label><input type="radio" name="q40"> The exhaust temperature</label>
+            <label><input type="radio" name="q40"> The exhaust velocity</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">41.</span> What is the class B of classification of fires?</div>
+        <div class="options">
+            <label><input type="radio" name="q41"> it is a combustion of a solid fuel</label>
+            <label><input type="radio" name="q41"> it is a combustion of gas fuel</label>
+            <label><input type="radio" name="q41"> it is a combustion of a liquid fuel</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">42.</span> How is supplied the Fenwal sensing system?</div>
+        <div class="options">
+            <label><input type="radio" name="q42"> with 50 Volt DC electrical power</label>
+            <label><input type="radio" name="q42"> with 28 Volt AC electrical power</label>
+            <label><input type="radio" name="q42"> with 28 Volt DC electrical power</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">43.</span> Which of the following sentences is true considering the Kiddle continuous-loop detection system?</div>
+        <div class="options">
+            <label><input type="radio" name="q43"> three wires are buried in a ceramic bead</label>
+            <label><input type="radio" name="q43"> two wires are buried in a metallic bead</label>
+            <label><input type="radio" name="q43"> two wires are buried in a ceramic bead</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">44.</span> How many kind of fire protection are there in a gas turbine engine?</div>
+        <div class="options">
+            <label><input type="radio" name="q44"> 2, Passive and Active</label>
+            <label><input type="radio" name="q44"> 2, detection and intervention</label>
+            <label><input type="radio" name="q44"> 2, Action and Reaction</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">45.</span> How many wires are buried in the ceramic bead in a Kiddle sensor?</div>
+        <div class="options">
+            <label><input type="radio" name="q45"> 1</label>
+            <label><input type="radio" name="q45"> 2</label>
+            <label><input type="radio" name="q45"> 3</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">46.</span> Which one is the universally adopted extinguish agent in all engines?</div>
+        <div class="options">
+            <label><input type="radio" name="q46"> Tetrafluoroethylene</label>
+            <label><input type="radio" name="q46"> Halon 1301</label>
+            <label><input type="radio" name="q46"> Halon 7349</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">47.</span> What is necessary to do if the temperature limitation appears likely to be exceeded, during light-up period?</div>
+        <div class="options">
+            <label><input type="radio" name="q47"> the shut-off valve must be closed</label>
+            <label><input type="radio" name="q47"> the shut-off valve must be opened</label>
+            <label><input type="radio" name="q47"> the shut-off valve must be powered down</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">48.</span> When can the blade tips and concave surfaces be scanned with boroscope?</div>
+        <div class="options">
+            <label><input type="radio" name="q48"> in the third pass</label>
+            <label><input type="radio" name="q48"> in the first pass</label>
+            <label><input type="radio" name="q48"> in the second pass</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">49.</span> When can the blade tips and concave surfaces be scanned with boroscope? (Duplicate in source)</div>
+        <div class="options">
+            <label><input type="radio" name="q49"> in the second pass</label>
+            <label><input type="radio" name="q49"> in the third pass</label>
+            <label><input type="radio" name="q49"> in the first pass</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">50.</span> How many categories are used to classified the inspection related to gas turbine engines ?</div>
+        <div class="options">
+            <label><input type="radio" name="q50"> five main categories</label>
+            <label><input type="radio" name="q50"> three main categories</label>
+            <label><input type="radio" name="q50"> two main categories</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">51.</span> Which of the following distance influences the field-of-view of a boroscope?</div>
+        <div class="options">
+            <label><input type="radio" name="q51"> the distance from the boroscope tail to the subject being inspected</label>
+            <label><input type="radio" name="q51"> the distance from the boroscope tip to the subject being inspected</label>
+            <label><input type="radio" name="q51"> the distance from the distal end of the boroscope to the subject being inspected</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">52.</span> What does hot section inspection include?</div>
+        <div class="options">
+            <label><input type="radio" name="q52"> the air intake</label>
+            <label><input type="radio" name="q52"> the whole compressor assembly</label>
+            <label><input type="radio" name="q52"> the combustion chambers, the turbine assemblies and the exhaust section</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">53.</span> How many categories are there to classify the compressor cleaning methods?</div>
+        <div class="options">
+            <label><input type="radio" name="q53"> many different categories</label>
+            <label><input type="radio" name="q53"> three categories</label>
+            <label><input type="radio" name="q53"> two categories</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">54.</span> Which is one symptoms of engine stall?</div>
+        <div class="options">
+            <label><input type="radio" name="q54"> N1 and N2 fluctuation</label>
+            <label><input type="radio" name="q54"> Low N1 and N2</label>
+            <label><input type="radio" name="q54"> High N1 and N2</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">55.</span> What does cold section inspection include?</div>
+        <div class="options">
+            <label><input type="radio" name="q55"> the turbine assemblies and the exhaust section</label>
+            <label><input type="radio" name="q55"> the air intake and the whole compressor assembly</label>
+            <label><input type="radio" name="q55"> the combustion chambers</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">56.</span> Which is the function of a rapid throttle movements?</div>
+        <div class="options">
+            <label><input type="radio" name="q56"> to ensure that the maximum temperature limitation is not exceeded</label>
+            <label><input type="radio" name="q56"> to avoid thermal stresses to engine</label>
+            <label><input type="radio" name="q56"> to check the acceleration and deceleration capabilities of the engine</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">57.</span> What does it mean high oil temperature reading?</div>
+        <div class="options">
+            <label><input type="radio" name="q57"> Internal damage, such as an LP turbine failure</label>
+            <label><input type="radio" name="q57"> Bearing failure</label>
+            <label><input type="radio" name="q57"> Engine operational instability, such as surge</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">58.</span> What does high oil temperatures indicate?</div>
+        <div class="options">
+            <label><input type="radio" name="q58"> Bearing failure, unintended leakage, malfunction of the engine oil cooler</label>
+            <label><input type="radio" name="q58"> Sump fire, intended leakage, malfunction of the hydraulic oil cooler</label>
+            <label><input type="radio" name="q58"> Bearing failure, sump fire, unintended leakage, malfunction of the engine oil cooler</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">59.</span> After the external inspection during the starting procedure of an engine what is required to do?</div>
+        <div class="options">
+            <label><input type="radio" name="q59"> All non-essential systems are switched or selected on “OFF”</label>
+            <label><input type="radio" name="q59"> All non-essential systems are switched or selected on “IDLE”</label>
+            <label><input type="radio" name="q59"> All non-essential systems are switched or selected on “ON”</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">60.</span> When does hung start occur?</div>
+        <div class="options">
+            <label><input type="radio" name="q60"> when the engine completely stops accelerating toward idle</label>
+            <label><input type="radio" name="q60"> when the engine may spend a considerable time at very low RPM</label>
+            <label><input type="radio" name="q60"> when turbine temperatures may appear high</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">61.</span> Which substances are mixed with some anti-corrosive compounds?</div>
+        <div class="options">
+            <label><input type="radio" name="q61"> with de-icing fluid</label>
+            <label><input type="radio" name="q61"> with air</label>
+            <label><input type="radio" name="q61"> with engine lubricating oil</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">62.</span> Where must be sprayed anti-corrosive compound in a gas turbine engine?</div>
+        <div class="options">
+            <label><input type="radio" name="q62"> On turbine inlet sprayed, on exhaust area sprayed and on every small part of the engine subjected to corrosion with a brush</label>
+            <label><input type="radio" name="q62"> On compressor inlet sprayed, on exhaust area sprayed and on every small part of the engine subjected to corrosion with a brush</label>
+            <label><input type="radio" name="q62"> On compressor inlet sprayed, on turbine outlet sprayed and on every small part of the engine subjected to corrosion with a brush</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">63.</span> Which are the two sequences followed during the engine preservation procedure ?</div>
+        <div class="options">
+            <label><input type="radio" name="q63"> long term preservation and very long term preservation</label>
+            <label><input type="radio" name="q63"> short term preservation and very short term preservation</label>
+            <label><input type="radio" name="q63"> short term preservation and long term preservation</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">64.</span> Which kind of material is used for the container employed for engine preservation?</div>
+        <div class="options">
+            <label><input type="radio" name="q64"> rubber</label>
+            <label><input type="radio" name="q64"> cardboard</label>
+            <label><input type="radio" name="q64"> cardboard or metal</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">65.</span> Which is the average pore size of a desiccant?</div>
+        <div class="options">
+            <label><input type="radio" name="q65"> 2,4 nanometres</label>
+            <label><input type="radio" name="q65"> 3,5 nanometres</label>
+            <label><input type="radio" name="q65"> 4,3 nanometres</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">66.</span> How does the gel appear if silica gel is mixed with cobalt chloride?</div>
+        <div class="options">
+            <label><input type="radio" name="q66"> red</label>
+            <label><input type="radio" name="q66"> green</label>
+            <label><input type="radio" name="q66"> bright blue</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">67.</span> Where is used EICAS system?</div>
+        <div class="options">
+            <label><input type="radio" name="q67"> Boeing Industries</label>
+            <label><input type="radio" name="q67"> Airbus Industries</label>
+            <label><input type="radio" name="q67"> Lockheed Martin industries</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">68.</span> What is EICAS (Electronic Information and Crew Alerting System)?</div>
+        <div class="options">
+            <label><input type="radio" name="q68"> it is the system that enable the flight crew to monitor the engine parameters</label>
+            <label><input type="radio" name="q68"> it is the system to enable the flight crew to monitor the propeller parameters</label>
+            <label><input type="radio" name="q68"> it is not the same thing of ECAM</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">69.</span> What is the Engine Pressure Ratio (EPR)?</div>
+        <div class="options">
+            <label><input type="radio" name="q69"> the parameter commonly used to calculated the thrust level</label>
+            <label><input type="radio" name="q69"> the parameter commonly used to calculated the heat level</label>
+            <label><input type="radio" name="q69"> the parameter commonly used to calculate the resistance level</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">70.</span> What does it mean the acronym ECAM?</div>
+        <div class="options">
+            <label><input type="radio" name="q70"> Electronic Centralized Aircraft Maintenance</label>
+            <label><input type="radio" name="q70"> Electronic Centralized Aircraft Monitoring</label>
+            <label><input type="radio" name="q70"> Electronic Crew Alerting Monitor</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">71.</span> What is the JPT?</div>
+        <div class="options">
+            <label><input type="radio" name="q71"> It is the temperature at the turbine outlet</label>
+            <label><input type="radio" name="q71"> It is the temperature at the exhaust gases</label>
+            <label><input type="radio" name="q71"> It is the temperature at the exhaust nozzle inlet</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">72.</span> What is the TGT?</div>
+        <div class="options">
+            <label><input type="radio" name="q72"> It is the temperature of the gases inside the turbine</label>
+            <label><input type="radio" name="q72"> It is the temperature at the turbine inlet</label>
+            <label><input type="radio" name="q72"> It is the temperature inside the turbine at two significant stages</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">73.</span> How many kind of thermocouple is possible to recognize?</div>
+        <div class="options">
+            <label><input type="radio" name="q73"> 4</label>
+            <label><input type="radio" name="q73"> 2</label>
+            <label><input type="radio" name="q73"> 3</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">74.</span> How can be decreased the interaction of the propellers?</div>
+        <div class="options">
+            <label><input type="radio" name="q74"> there is no solution</label>
+            <label><input type="radio" name="q74"> by synchronizing and synchrophasing</label>
+            <label><input type="radio" name="q74"> by increasing the RPM value</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">75.</span> What is the Bourdon's tube?</div>
+        <div class="options">
+            <label><input type="radio" name="q75"> It is a pipe usually utilized for the return line of the oil system</label>
+            <label><input type="radio" name="q75"> It is a gauge usually utilized for pressure measurements</label>
+            <label><input type="radio" name="q75"> It is a gauge usually utilized for temperature measurements</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">76.</span> What is JPT? (Duplicate entry)</div>
+        <div class="options">
+            <label><input type="radio" name="q76"> the temperature at the exhaust nozzle inlet</label>
+            <label><input type="radio" name="q76"> the temperature at the turbine inlet</label>
+            <label><input type="radio" name="q76"> the temperature at the turbine outlet</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">77.</span> What does it mean the acronym EICAS?</div>
+        <div class="options">
+            <label><input type="radio" name="q77"> Electronic Information and Crew Alerting System</label>
+            <label><input type="radio" name="q77"> Electronic Information and Centralized Aircraft System</label>
+            <label><input type="radio" name="q77"> Electronic Information and Central Alerting System</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">78.</span> Which are the fundamental temperatures use in the evaluation of the correct operation of some engine components?</div>
+        <div class="options">
+            <label><input type="radio" name="q78"> Jet Pipe Temperature and Exhaust Gas Temperature</label>
+            <label><input type="radio" name="q78"> Turbine Inlet Temperature and Turbine Outlet Temperature</label>
+            <label><input type="radio" name="q78"> Interstage Turbine Temperature (ITT) and Exhaust Gas Temperature (EGT)</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">79.</span> Which of the following electrical powers is used to supply the alternating current powered instruments?</div>
+        <div class="options">
+            <label><input type="radio" name="q79"> 26 Volt, 260 Hertz electrical power.</label>
+            <label><input type="radio" name="q79"> 26 Volt, 400 Hertz electrical power.</label>
+            <label><input type="radio" name="q79"> 40 Volt, 400 Hertz electrical power.</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">80.</span> Which is the correct tension and frequency of electric power that must be supplied to AC instruments?</div>
+        <div class="options">
+            <label><input type="radio" name="q80"> 26V 400 Hz</label>
+            <label><input type="radio" name="q80"> 26V 200 Hz</label>
+            <label><input type="radio" name="q80"> 28V 400 Hz</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">81.</span> Which is the primary function of the ignition system?</div>
+        <div class="options">
+            <label><input type="radio" name="q81"> to ensure continuous relight, or relight when controlled, in flight</label>
+            <label><input type="radio" name="q81"> to ensure that the air-fuel mixture becomes ignited during the starting cycle</label>
+            <label><input type="radio" name="q81"> to ensure that the air-fuel mixture becomes ignited during the take off phase</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">82.</span> What do the cartridge starters use?</div>
+        <div class="options">
+            <label><input type="radio" name="q82"> an explosive cartridge</label>
+            <label><input type="radio" name="q82"> an electrical power</label>
+            <label><input type="radio" name="q82"> air under pressure</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">83.</span> Which is the secondary function of the ignition system?</div>
+        <div class="options">
+            <label><input type="radio" name="q83"> to ensure that the air-fuel mixture becomes ignited during the take off phase</label>
+            <label><input type="radio" name="q83"> to ensure continuous relight, or relight when controlled, in flight</label>
+            <label><input type="radio" name="q83"> to ensure that the air-fuel mixture becomes ignited during the starting cycle</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">84.</span> What does the starter disengagement depend on?</div>
+        <div class="options">
+            <label><input type="radio" name="q84"> the method using by pilot</label>
+            <label><input type="radio" name="q84"> the type of airplane</label>
+            <label><input type="radio" name="q84"> the type and configuration of the engine</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">85.</span> Speaking about ignition system, how is possible to define the capacity?</div>
+        <div class="options">
+            <label><input type="radio" name="q85"> It is the measure of the performance of an ignition system and the unit of measurement is [N]</label>
+            <label><input type="radio" name="q85"> It is the measure of the performance of an ignition system and the unit of measurement is [Watt]</label>
+            <label><input type="radio" name="q85"> It is the measure of the performance of an ignition system and the unit of measurement is [Joule]</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">86.</span> What is the starting system?</div>
+        <div class="options">
+            <label><input type="radio" name="q86"> It is the system that has the function to set the compressor in rotation by driving it in the initial phase</label>
+            <label><input type="radio" name="q86"> It is the system that provide the pre-heating of the cold airflow that enters the compressor</label>
+            <label><input type="radio" name="q86"> It is the system that operates inside the combustion chamber and provides for the initial ignition of the flame inside the chamber</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">87.</span> Which is the material used for the external body of an igniter plug?</div>
+        <div class="options">
+            <label><input type="radio" name="q87"> Nickel</label>
+            <label><input type="radio" name="q87"> Chromium</label>
+            <label><input type="radio" name="q87"> Steel containing nickel and chromium</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">88.</span> How the direct cranking motor is protected from too high torque?</div>
+        <div class="options">
+            <label><input type="radio" name="q88"> Through the use of a spring loaded valve</label>
+            <label><input type="radio" name="q88"> Through the use of a relief valve</label>
+            <label><input type="radio" name="q88"> Through the use of a clutch</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">89.</span> Which is the range of temperature and pressure of the air bled for air system for aircraft services supply?</div>
+        <div class="options">
+            <label><input type="radio" name="q89"> 200-250 degrees Celsius and 295 kPa (50 PSI)</label>
+            <label><input type="radio" name="q89"> 200-250 degrees Celsius and 275 kPa (40 PSI)</label>
+            <label><input type="radio" name="q89"> 300-350 degrees Celsius and 275 kPa (40 PSI)</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">90.</span> The cooling air flow in gas turbine engine is used to control what?</div>
+        <div class="options">
+            <label><input type="radio" name="q90"> The turbine shafts and discs temperature cooling or heating them</label>
+            <label><input type="radio" name="q90"> The compressor shafts and discs temperature cooling them</label>
+            <label><input type="radio" name="q90"> The compressor shafts and discs temperature cooling or heating them</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">91.</span> Where are located bearing chambers?</div>
+        <div class="options">
+            <label><input type="radio" name="q91"> in the air inlet of the engine</label>
+            <label><input type="radio" name="q91"> in the cooler regions of the engine</label>
+            <label><input type="radio" name="q91"> in the air transfer port of the engine</label>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="question-title"><span class="question-number">92.</span> Which is the temperature range that requires the anti-icing system activation?</div>
+        <div class="options">
+            <label><input type="radio" name="q92"> is +6 degrees Celsius or less and the dew point is 10 degrees C</label>
+            <label><input type="radio" name="q92"> is +6 degrees Celsius or less and the dew point is 3 degrees C</label>
+            <label><input type="radio" name="q92"> is 10 degrees C or less and the dew point is 3 degrees C</label>
+        </div>
+    </div>
+
 </div>
 
+<footer>
+    Aviotrace Swiss © - Internal Use Only - Part-66 Examination Materials
+</footer>
+
 <script>
-// Bloquear clic derecho
-document.addEventListener('contextmenu', e => e.preventDefault());
+    // Bloqueos de seguridad (clic derecho y selección)
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('selectstart', e => e.preventDefault());
 
-// Bloquear selección de texto
-document.addEventListener('selectstart', e => e.preventDefault());
+    const warningBar = document.getElementById('warningBar');
 
-// Barra de advertencia
-const warningBar = document.getElementById('warningBar');
+    function showWarning() { warningBar.style.display = 'block'; }
+    function hideWarning() { warningBar.style.display = 'none'; }
 
-// Detectar si la pestaña pierde visibilidad
-document.addEventListener('visibilitychange', () => {
-    warningBar.style.display = document.hidden ? 'block' : 'none';
-});
+    // Detectar si cambian de pestaña o minimizan
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) showWarning(); else hideWarning();
+    });
 
-// Detectar si la ventana pierde foco
-window.addEventListener('blur', () => {
-    warningBar.style.display = 'block';
-});
-
-window.addEventListener('focus', () => {
-    warningBar.style.display = 'none';
-});
+    // Detectar si sacan el ratón de la ventana (pierde el foco)
+    window.addEventListener('blur', showWarning);
+    window.addEventListener('focus', hideWarning);
 </script>
 
 </body>
